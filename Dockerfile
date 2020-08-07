@@ -24,6 +24,6 @@ CMD export PATH=$PATH:/cross/bin && \
     make $MAKE_OPTS && \
     mv *.zip /output && \
     cd / && \
-    rm -rf /zopfli* /Amiga-Stuff
+    rm -rf /Amiga-Stuff
 
 VOLUME /output
