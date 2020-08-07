@@ -1,12 +1,11 @@
-FROM rjnorthrow/m68k-toolchain
+FROM rjnorthrow/m68k-toolchain:latest
 
 ENV MAKE_OPTS="" \
     COMMIT="" \
+    BIN_DIR=/cross \
     ZOPFLI_RELEASE=1.0.1
 
-RUN apk add git py-pip && \
-    pip install --upgrade pip && \
-    pip install crcmod && \
+RUN apt-get install -y python3-crcmod zip && \
     wget https://github.com/google/zopfli/archive/zopfli-${ZOPFLI_RELEASE}.tar.gz && \
     tar xf zopfli-${ZOPFLI_RELEASE}.tar.gz && \
     cd zopfli-zopfli-${ZOPFLI_RELEASE} && \
@@ -20,10 +19,11 @@ CMD export PATH=$PATH:/cross/bin && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
     cd inflate && \
-    make PREFIX=m68k-unknown-elf- && \
+    make ${MAKE_OPTS} && \
     cd ../testkit && \
     make $MAKE_OPTS && \
     mv *.zip /output && \
-    rm -rf /zopfli* Amiga-Stuff
+    cd / && \
+    rm -rf /zopfli* /Amiga-Stuff
 
 VOLUME /output
