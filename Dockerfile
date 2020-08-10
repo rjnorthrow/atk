@@ -7,8 +7,12 @@ CMD export PATH=$PATH:/cross/bin && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
-    cd testkit && \
+    cd inflate && \
+    make ${MAKE_OPTS} && \
+    cd ../testkit && \
     make $MAKE_OPTS && \
-    mv *.zip /output
+    mv *.zip /output && \
+    cd / && \
+    rm -rf /Amiga-Stuff
 
 VOLUME /output
