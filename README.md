@@ -4,7 +4,7 @@ Build for [Keir Fraser's Amiga Test Kit (formerly systest)](https://github.com/k
 To use, install [docker](docker.com) and then do (optional parameters are in square brackets):
 
 ```
-docker run -ti --rm -v${pwd}:/output \
+docker run -ti --rm -v$(pwd):/output \
     [-e MAKE_OPTS="-j4"] \
     [-e COMMIT="testkit-v1.11"] \
     rjnorthrow/atk
