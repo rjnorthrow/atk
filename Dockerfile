@@ -3,7 +3,7 @@ FROM rjnorthrow/m68k-toolchain:latest
 ENV MAKE_OPTS="" \
     COMMIT="" \
     BIN_DIR=/cross \
-    ZOPFLI_RELEASE=1.0.1
+    ZOPFLI_RELEASE=1.0.3
 
 RUN apt-get install -y python3-crcmod zip && \
     wget https://github.com/google/zopfli/archive/zopfli-${ZOPFLI_RELEASE}.tar.gz && \
