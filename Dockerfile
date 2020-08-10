@@ -1,7 +1,7 @@
-FROM rjnorthrow/m68k-toolchain
+FROM rjnorthrow/m68k-toolchain:v1.7
 
 ENV MAKE_OPTS ""
-ENV COMMIT ""
+ENV COMMIT "testkit-v1.7"
 
 CMD export PATH=$PATH:/cross/bin && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
