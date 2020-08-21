@@ -6,7 +6,7 @@ To use, install [docker](docker.com) and then do (optional parameters are in squ
 ```
 docker run -ti --rm -v$(pwd):/output \
     [-e MAKE_OPTS="-j4"] \
-    [-e COMMIT="testkit-v1.11"] \
+    [-e COMMIT="testkit-v1.10"] \
     rjnorthrow/atk
 ```
 
@@ -15,6 +15,8 @@ docker run -ti --rm -v$(pwd):/output \
 `COMMIT` is the Git commit for the Amiga Test Kit if you wish to specify a version. Leave this out to get the latest version
 
 The zip file containing the goodies will be dropped into your current directory.
+
+Works with `-e COMMIT=testkit-v1.8` consecutively up to `-e COMMIT=testkit-v1.10`
 
 ---
 For the build only, these are optional paramaters:
