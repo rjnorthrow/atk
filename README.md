@@ -7,7 +7,7 @@ To use, install [docker](docker.com) and then do (optional parameters are in squ
 docker run -ti --rm -v$(pwd):/output \
     [-e MAKE_OPTS="-j4"] \
     [-e COMMIT="testkit-v1.11"] \
-    rjnorthrow/atk
+    rjnorthrow/atk:latest
 ```
 
 `MAKE_OPTS` determines how much parallelism you are going to use when building the C modules. This probably does not make much difference so can be safely ignored
@@ -15,6 +15,10 @@ docker run -ti --rm -v$(pwd):/output \
 `COMMIT` is the Git commit for the Amiga Test Kit if you wish to specify a version. Leave this out to get the latest version
 
 The zip file containing the goodies will be dropped into your current directory.
+
+Tested on the following versions:
+* `testkit-v1.11`
+* `testkit-v1.12`
 
 ---
 For the build only, these are optional paramaters:
