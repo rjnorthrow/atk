@@ -7,7 +7,7 @@ To use, install [docker](docker.com) and then do (optional parameters are in squ
 docker run -ti --rm -v$(pwd):/output \
     [-e MAKE_OPTS="-j4"] \
     [-e COMMIT="testkit-v1.10"] \
-    rjnorthrow/atk
+    rjnorthrow/atk:v1.10
 ```
 
 `MAKE_OPTS` determines how much parallelism you are going to use when building the C modules. This probably does not make much difference so can be safely ignored
