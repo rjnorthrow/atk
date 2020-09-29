@@ -19,6 +19,7 @@ The zip file containing the goodies will be dropped into your current directory.
 Tested on the following versions:
 * `testkit-v1.11`
 * `testkit-v1.12`
+* `testkit-v1.13`
 
 ---
 For the build only, these are optional paramaters:
