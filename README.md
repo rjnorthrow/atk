@@ -20,6 +20,7 @@ Tested on the following versions:
 * `testkit-v1.11`
 * `testkit-v1.12`
 * `testkit-v1.13`
+* `testkit-v1.14`
 
 ---
 For the build only, these are optional paramaters:
