@@ -16,7 +16,7 @@ docker run -ti --rm -v$(pwd):/output \
 
 The zip file containing the goodies will be dropped into your current directory.
 
-Tested on versions `testkit-v1.11` to `testkit-v1.16` inclusive
+Tested on versions `testkit-v1.11` to `testkit-v1.17` inclusive
 
 ---
 For the build only, these are optional paramaters:
