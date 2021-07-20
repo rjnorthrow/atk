@@ -6,7 +6,7 @@ To use, install [docker](docker.com) and then do (optional parameters are in squ
 ```
 docker run -ti --rm -v$(pwd):/output \
     [-e MAKE_OPTS="-j4"] \
-    [-e COMMIT="testkit-v1.11"] \
+    [-e COMMIT="testkit-v1.18"] \
     rjnorthrow/atk:latest
 ```
 
@@ -16,7 +16,7 @@ docker run -ti --rm -v$(pwd):/output \
 
 The zip file containing the goodies will be dropped into your current directory.
 
-Tested on versions `testkit-v1.11` to `testkit-v1.17` inclusive
+Tested on versions `testkit-v1.11` to `testkit-v1.18` inclusive
 
 ---
 For the build only, these are optional paramaters:
