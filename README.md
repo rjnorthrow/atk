@@ -12,9 +12,9 @@ docker run -ti --rm -v$(pwd):/output \
 
 `MAKE_OPTS` determines how much parallelism you are going to use when building the C modules. This probably does not make much difference so can be safely ignored
 
-`COMMIT` is the Git commit for the Amiga Test Kit if you wish to specify a version. Leave this out to get the latest version
+`COMMIT` is the Git tag if you wish to specify a version. Leave this out to get the latest version
 
-The zip file containing the goodies will be dropped into your current directory.
+The zip file containing the goodies will be dropped into your current directory. Note that the zip file name has changed after v1.16 from `AmigaTestKit-v1.16.zip` (for example) to `AmigaTestKit-<ID>.zip` where ID is the short Git commit ID such as `AmigaTestKit-803ec6a.zip` for version 1.18. The contents however have not changed, in that the zip contains the correct version if specified using `COMMIT=`
 
 Tested on versions `testkit-v1.11` to `testkit-v1.18` inclusive
 
