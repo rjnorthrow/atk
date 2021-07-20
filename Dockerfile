@@ -5,7 +5,7 @@ ENV MAKE_OPTS="" \
     BIN_DIR=/cross \
     ZOPFLI_RELEASE=1.0.3
 
-RUN apt-get install -y python3-crcmod zip && \
+RUN apt-get update && apt-get install -y python3-crcmod zip && \
     wget https://github.com/google/zopfli/archive/zopfli-${ZOPFLI_RELEASE}.tar.gz && \
     tar xf zopfli-${ZOPFLI_RELEASE}.tar.gz && \
     cd zopfli-zopfli-${ZOPFLI_RELEASE} && \
