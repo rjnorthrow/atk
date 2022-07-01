@@ -21,6 +21,7 @@ CMD export PATH=$PATH:/cross/bin && \
     cd inflate && \
     make ${MAKE_OPTS} && \
     cd ../testkit && \
+    VER=${COMMIT##testkit-v} && \
     make $MAKE_OPTS && \
     mv *.zip /output && \
     cd / && \
