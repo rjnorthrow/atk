@@ -6,7 +6,7 @@ To use, install [docker](docker.com) and then do (optional parameters are in squ
 ```
 docker run -ti --rm -v$(pwd):/output \
     [-e MAKE_OPTS="-j4"] \
-    [-e COMMIT="testkit-v1.19"] \
+    [-e COMMIT="testkit-v1.20"] \
     rjnorthrow/atk:latest
 ```
 
@@ -16,7 +16,7 @@ docker run -ti --rm -v$(pwd):/output \
 
 The zip file containing the goodies will be dropped into your current directory. Note that the zip file name has changed after v1.16 from `AmigaTestKit-v1.16.zip` (for example) to `AmigaTestKit-<ID>.zip` where ID is the short Git commit ID such as `AmigaTestKit-803ec6a.zip` for version 1.18. The contents however have not changed, in that the zip contains the correct version if specified using `COMMIT=`
 
-Tested on versions `testkit-v1.11` to `testkit-v1.19` inclusive
+Tested on versions `testkit-v1.11` to `testkit-v1.20` inclusive
 
 ---
 For the build only, these are optional paramaters:
