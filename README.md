@@ -25,3 +25,7 @@ For the build only, these are optional paramaters:
     [-e BIN_DIR="/cross"] \
     [-e ZOPFLI_RELEASE="1.0.3"] \
 ```
+
+Known Issues
+------------
+This currently only works on amd64 (x86-64)
