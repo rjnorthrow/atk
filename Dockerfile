@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y python3-crcmod python3-pip zip && \
     rm -rf /zopfli*
 
 # Log out and back in to allow Python to re-evaluate its variables
-RUN pip3 install amitools
+RUN pip3 install cython && \
+    pip3 install -U git+https://github.com/cnvogelg/amitools.git
 
 CMD export PATH=$PATH:/cross/bin && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
@@ -24,8 +25,7 @@ CMD export PATH=$PATH:/cross/bin && \
     cd inflate && \
     make ${MAKE_OPTS} && \
     cd ../testkit && \
-    VER=${COMMIT##testkit-v} && \
-    make $MAKE_OPTS && \
+    VER=${COMMIT##testkit-v} make $MAKE_OPTS && \
     mv *.zip /output && \
     cd / && \
     rm -rf /Amiga-Stuff
