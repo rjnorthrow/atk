@@ -1,7 +1,7 @@
 # atk - Amiga Test Kit
 Build for [Keir Fraser's Amiga Test Kit (formerly systest)](https://github.com/keirf/Amiga-Stuff)
 
-To use, install [docker](docker.com) and then do (optional parameters are in square brackets):
+To use, install [docker](https://docker.com/) and then do (optional parameters are in square brackets):
 
 ```
 docker run -ti --rm -v$(pwd):/output \
