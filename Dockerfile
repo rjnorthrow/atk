@@ -25,7 +25,7 @@ CMD export PATH=$PATH:/cross/bin && \
     cd inflate && \
     make ${MAKE_OPTS} && \
     cd ../testkit && \
-    VER=${COMMIT##testkit-v} make $MAKE_OPTS && \
+    make clean && make $MAKE_OPTS all VER=${COMMIT##testkit-v} && \
     mv *.zip /output && \
     cd / && \
     rm -rf /Amiga-Stuff
