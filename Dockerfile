@@ -1,7 +1,7 @@
 FROM rjnorthrow/m68k-toolchain:v1.21
 
 ENV MAKE_OPTS="" \
-    COMMIT="" \
+    COMMIT="testkit-v1.21" \
     BIN_DIR=/cross \
     ZOPFLI_RELEASE=1.0.3
 
