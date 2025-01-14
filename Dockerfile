@@ -9,9 +9,12 @@ CMD export PATH=$PATH:${BIN_DIR} && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
     cd inflate && \
-    make ${MAKE_OPTS} && \
-    cd ../testkit && \
     make $MAKE_OPTS && \
+    cd ../testkit && \
+    make clean && \
+    if [ ! -z "$COMMIT" ]; then \
+      make $MAKE_OPTS all VER=${COMMIT##testkit-v}; else \
+      make $MAKE_OPTS all; fi && \
     mv *.zip /output && \
     cd / && \
     rm -rf /Amiga-Stuff
