@@ -1,10 +1,16 @@
-FROM rjnorthrow/m68k-toolchain:latest
+FROM rjnorthrow/m68k_toolchain:latest
 
 ENV MAKE_OPTS="" \
     COMMIT="" \
-    BIN_DIR=/root/.local/bin:/cross/bin
+    MAKE_DIR="/cross"
 
-CMD export PATH=$PATH:${BIN_DIR} && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && apt-get install -y python3-crcmod python3-venv && \
+    python3 -m venv $MAKE_DIR && \
+    $MAKE_DIR/bin/pip3 install git+https://github.com/cnvogelg/amitools.git
+
+CMD git config --global pull.rebase false && \
+    export PATH=$PATH:$MAKE_DIR/bin && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
