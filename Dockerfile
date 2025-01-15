@@ -5,12 +5,12 @@ ENV MAKE_OPTS="" \
     MAKE_DIR="/cross"
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update && apt-get install -y python3-crcmod python3-venv && \
-    python3 -m venv $MAKE_DIR && \
-    $MAKE_DIR/bin/pip3 install git+https://github.com/cnvogelg/amitools.git
+    export PATH=$PATH:/root/.local/bin && \
+    apt-get update && apt-get install -y pipx python3-crcmod && \
+    pipx install amitools
 
 CMD git config --global pull.rebase false && \
-    export PATH=$PATH:$MAKE_DIR/bin && \
+    export PATH=$PATH:/root/.local/bin:$MAKE_DIR/bin && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
