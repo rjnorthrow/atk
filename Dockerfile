@@ -1,4 +1,4 @@
-FROM rjnorthrow/m68k_toolchain:latest
+FROM rjnorthrow/m68k-toolchain:latest
 
 ENV MAKE_OPTS="" \
     COMMIT="" \
