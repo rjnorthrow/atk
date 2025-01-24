@@ -11,6 +11,7 @@ The zip file containing the goodies will be dropped into your current directory.
 called something like `AmigaTestKit-ae428d4.zip`, then this is the very latest version, newer than
 the current release. The seven character identifier is the short `git` ID from the `HEAD`
 
+This is a multi-architecture build, it should work on any fairly recent Raspberry Pi, PC or Mac
 
 Older versions
 --------------
