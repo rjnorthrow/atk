@@ -1,31 +1,33 @@
 FROM rjnorthrow/m68k-toolchain:v1.21
 
 ENV MAKE_OPTS="" \
+    ZOPFLI_RELEASE="1.0.3" \
     COMMIT="testkit-v1.21" \
-    BIN_DIR=/cross \
-    ZOPFLI_RELEASE=1.0.3
+    MAKE_DIR="/cross"
 
-RUN apt-get update && apt-get install -y python3-crcmod python3-pip zip && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    export PATH=$PATH:/root/.local/bin && \
+    apt-get update && apt-get install -y pipx python3-crcmod zip && \
+    pipx install amitools && \
     wget https://github.com/google/zopfli/archive/zopfli-${ZOPFLI_RELEASE}.tar.gz && \
     tar xf zopfli-${ZOPFLI_RELEASE}.tar.gz && \
     cd zopfli-zopfli-${ZOPFLI_RELEASE} && \
     make zopfli && \
     make zopflipng && \
-    cp zopfli zopflipng /usr/local/bin/ && \
+    cp zopfli zopflipng ${MAKE_DIR}/bin/ && \
+    cd / && \
     rm -rf /zopfli*
 
-# Log out and back in to allow Python to re-evaluate its variables
-RUN pip3 install cython && \
-    pip3 install -U git+https://github.com/cnvogelg/amitools.git
-
-CMD export PATH=$PATH:/cross/bin && \
+CMD git config --global pull.rebase false && \
+    export PATH=$PATH:/root/.local/bin:$MAKE_DIR/bin && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
     cd inflate && \
-    make ${MAKE_OPTS} && \
+    make $MAKE_OPTS && \
     cd ../testkit && \
-    make clean && make $MAKE_OPTS all VER=${COMMIT##testkit-v} && \
+    make clean && \
+    if [ ! -z "$COMMIT" ]; then make $MAKE_OPTS all VER=${COMMIT##testkit-v}; else make $MAKE_OPTS all; fi && \
     mv *.zip /output && \
     cd / && \
     rm -rf /Amiga-Stuff
