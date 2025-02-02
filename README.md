@@ -16,6 +16,4 @@ This is a multi-architecture build, it should work on any fairly recent Raspberr
 Older versions
 --------------
 
-For versions 1.3 to 1.7: `docker run -ti --rm -v$(pwd):/output -e "COMMIT=testkit-v1.3" rjnorthrow/atk:v1.7` (example for version 1.3)
-
-For versions 1.8 to 1.21: `docker run -ti --rm -v$(pwd):/output -e "COMMIT=testkit-v1.17" rjnorthrow/atk:v1.21` (example for version 1.17)
+For versions 1.3 to 1.21: `docker run -ti --rm -v$(pwd):/output -e "COMMIT=testkit-v1.17" rjnorthrow/atk:v1.21` (example for version 1.17)
