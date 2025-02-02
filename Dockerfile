@@ -20,6 +20,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 CMD git config --global pull.rebase false && \
     export PATH=$PATH:/root/.local/bin:$MAKE_DIR/bin && \
+    ln -s /usr/bin/python3 /usr/bin/python && \
     git clone https://github.com/keirf/Amiga-Stuff.git && \
     cd Amiga-Stuff && \
     git checkout $COMMIT && \
