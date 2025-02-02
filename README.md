@@ -12,11 +12,11 @@ docker run -ti --rm -v$(pwd):/output \
 
 `MAKE_OPTS` determines how much parallelism you are going to use when building the C modules. This probably does not make much difference so can be safely ignored
 
-`COMMIT` is the version you wish to create. Versions supported in this image are `testkit-v1.8` to `testkit-v1.21`. If you do not specify this, you will get `testkit-v1.21`
+`COMMIT` is the version you wish to create. Versions supported in this image are `testkit-v1.3` to `testkit-v1.21`. If you do not specify this, you will get `testkit-v1.21`
 
 The zip file containing the goodies will be dropped into your current directory
 
-Tested on versions `testkit-v1.8` to `testkit-v1.21` inclusive
+Tested on versions `testkit-v1.3` to `testkit-v1.21` inclusive
 
 
 ---
@@ -26,7 +26,3 @@ For the build only, these are optional paramaters:
     [-e BIN_DIR="/cross"] \
     [-e ZOPFLI_RELEASE="1.0.3"] \
 ```
-
-Known Issues
-------------
-This currently only works on amd64 (x86-64)
