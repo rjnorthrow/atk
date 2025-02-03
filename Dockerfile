@@ -18,6 +18,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     cd / && \
     rm -rf /zopfli*
 
+SHELL ["/bin/bash", "-c"]
+
 CMD git config --global pull.rebase false && \
     export PATH=$PATH:/root/.local/bin:$MAKE_DIR/bin && \
     ln -s /usr/bin/python3 /usr/bin/python && \
